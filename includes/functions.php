@@ -1,5 +1,5 @@
 <?php
-require_once 'recipe_post_type.php';
+require_once 'RecipePostType.php';
 
 add_action( 'wp_enqueue_scripts', 'diet_specific_style' );
 function diet_specific_style($hook){
@@ -8,6 +8,10 @@ function diet_specific_style($hook){
         wp_enqueue_style('diet-main-style', DIET_URL.'/assets/css/style.css',array(),DIET_VERSION);
         wp_enqueue_style('font-awesome-style', 'http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css',array(),DIET_VERSION);
     }
+}
+
+function is_recipe_taxonomy() {
+    return is_tax( get_object_taxonomies( 'recipe' ) );
 }
 
 function template_loader( $template )

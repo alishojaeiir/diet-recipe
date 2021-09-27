@@ -23,7 +23,6 @@ define('DIET_URL', plugin_dir_url(__FILE__));
 require_once DIET_PATH . 'includes/functions.php';
 require_once DIET_PATH . 'includes/RecipeFactory.php';
 require_once DIET_PATH . 'includes/DietEndpoint.php';
-add_action( 'init', 'diet_post_type_init' );
 
 add_filter( 'template_include', 'template_loader' );
 
