@@ -1,0 +1,49 @@
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+}
+
+.card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+.card button:hover {
+    opacity: 0.7;
+}
+.search-result{
+    position: absolute;
+    z-index: 99;
+    background-color: white;
+    padding: 0;
+    border: 1px solid #eee;
+    top: 100%;
+    left: 15px;
+    right: 15px;
+}
+.search-result .item{
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    display: block;
+    margin: 0;
+}
+.active{
+    background-color: #cacaca;
+}
+#searchclear{
+    position: absolute;
+    top: 12px;
+    right: 25px;
+}
+.rating{
+    color: gold;
+}
