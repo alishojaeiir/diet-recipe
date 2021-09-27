@@ -41,7 +41,7 @@ get_header();
                     <h3 class="m-0">
                         <a class="text-dark" v-bind:href=recipe.link >{{ recipe.title }}</a>
                     </h3>
-                    <?php do_action('after_recipe_title'); ?>
+                    <?php do_action('after_recipe_title_in_vue'); ?>
                     <div>
                         <p class="rating float-left">
                             <span>

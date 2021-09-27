@@ -3,9 +3,9 @@ class DietEndpoint
 {
     public function __construct()
     {
-        add_action('parse_request', array(&$this, 'sniff_requests'));
-        add_filter('query_vars', array(&$this, 'add_query_vars'));
-        add_action('init', array(&$this, 'add_endpoint'));
+        add_action('parse_request', array($this, 'sniff_requests'));
+        add_filter('query_vars', array($this, 'add_query_vars'));
+        add_action('init', array($this, 'add_endpoint'));
     }
     public function sniff_requests(){
         if (!function_exists('get_plugins')) {

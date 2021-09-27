@@ -14,11 +14,13 @@ class RecipeFactory
             return null;
         }
         $small_thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id($recipe_id));
+        $medium_thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id($recipe_id),'medium');
         $full_thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id($recipe_id),'full');
         $time_hours = (int) get_post_meta( $post->ID, 'diet_time_hours', true );
         $time_minutes = (int) get_post_meta( $post->ID, 'diet_time_minutes', true );
         $rating = (int) get_post_meta( $post->ID, 'diet_rating', true );
         $recipe_short_desc = get_post_meta( $post->ID, 'recipe_short_desc', true );
+        $recipe_ingredients = get_post_meta( $post->ID, 'diet_recipe_ingredients', true );
 
         $recipe = array(
             'id'=> $post->ID,
@@ -27,6 +29,7 @@ class RecipeFactory
             'content' => $post->post_content,
             'thumbnail' => array(
                 'small' => $small_thumbnail[0],
+                'medium' => $medium_thumbnail[0],
                 'full' => $full_thumbnail[0],
             ),
             'post_name' => $post->post_name,
@@ -35,6 +38,7 @@ class RecipeFactory
                 'hours' => $time_hours,
                 'minutes' => $time_minutes
             ),
+            'ingredients' => $recipe_ingredients,
             'link'  => get_post_permalink($recipe_id),
         );
         return $recipe;
